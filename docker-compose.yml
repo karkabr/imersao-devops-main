@@ -1,0 +1,14 @@
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual.
+    build: .
+    container_name: api
+    # Mapeia a porta 8000 do seu computador para a porta 8000 do container.
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no diretório /app do container.
+    # Isso permite que as alterações no código sejam refletidas em tempo real (hot-reload)
+    # e também garante que o banco de dados 'escola.db' seja salvo no seu computador.
+    volumes:
+      - .:/app
+
